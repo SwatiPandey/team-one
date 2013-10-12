@@ -4,9 +4,13 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+
 GET     /TeamMembers                controllers.Application.members()
+
 GET     /About						controllers.Application.about()
+
 GET     /ImpLinks					controllers.Application.implinks()
+
 GET     /Contacts                   controllers.Application.contacts()
 
 # Map static resources from the /public folder to the /assets URL path
