@@ -1,0 +1,59 @@
+@(signupForm: Form[models.userManagementDAO.Users])
+@import helper._
+@import helper.twitterBootstrap._
+
+@helper.form(action=routes.CreateUsersController.submit){
+<fieldset>
+            <legend>Create User</legend>
+            @inputText(
+                signupForm("loginName"), 
+                '_label -> "Username", 
+                '_help -> "Please choose a valid username.",
+                '_error -> signupForm.globalError
+            )
+            
+            @inputPassword(
+                signupForm("password"), 
+                '_label -> "Password",
+                '_help -> "A password must be at least 6 characters. "
+            )
+             @inputText(
+                signupForm("description.realFirstName"), '_label -> "First Name",
+                '_help -> ""
+             )
+             
+            @inputText(
+                signupForm("description.realMiddleName"), '_label -> "Middle Name",
+                '_help -> ""
+             )
+             
+            @inputText(
+                signupForm("description.realLastName"), '_label -> "Last Name",
+                '_help -> ""
+             )
+             
+            @textarea(
+                signupForm("description.address"), '_label -> "Address",
+                '_help -> ""
+             )
+            
+             @inputText(
+                signupForm("position"), 
+                '_label -> "Position", 
+                '_help -> "Please choose a valid position",
+                '_error -> signupForm.globalError
+            )
+            
+             @inputText(
+                signupForm("email"), '_label -> "Email",
+                '_help -> "Enter a valid email address."
+            )
+           
+              
+            @checkbox(
+                signupForm("isAdmin"), 
+                '_label -> "Admin", '_text -> "",
+                '_showConstraints -> false
+            )
+}
+<input type="submit" class="btn primary" value="Sign Up">
