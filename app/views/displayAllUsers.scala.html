@@ -1,0 +1,7 @@
+@(users:List[models.userManagementDAO.Users])
+
+
+@for(User<-users){
+	@User.getLoginName()
+
+}
