@@ -1,24 +1,15 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import models.Student;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.*;
-import views.html.*;
+import views.html.about;
+import views.html.contacts;
+import views.html.implinks;
+import views.html.index;
+import views.html.member;
 public class Application extends Controller {
 
     public static Result index() {
-    	List<String>  list = new ArrayList<String>();
-    	list.add("Vidya");
-    	list.add("SSVZ");
-    	
-    	List<Student> studentList = new ArrayList<Student>();
-    	studentList.add(new Student("vidya", 111));
-    	studentList.add(new Student("zeeshan",120));
-    	
         return ok(index.render());
     }
     
