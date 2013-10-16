@@ -102,11 +102,11 @@ public class Users extends Model{
 		 return Users.find.byId(id);
 	 }
 	
-	public Users getUserInfoByName(String name){
+	public Users getUserInfoByLoginName(String loginName){
 		 //TODO need to remove the hack around this
 		 List<Users> users = Users.find.all(); 
 		 for(Users user:users){
-			 if(user.getLoginName().equals(name)){
+			 if(user.getLoginName().equals(loginName)){
 				 return user;
 			 }
 		 }
