@@ -10,11 +10,11 @@ public interface UserManagement {
 	
 	public void editUser();
 	
-	public void deleteUser();
+	public void deleteUser(long id);
 	
 	public List<Users> listAllUsers();
 	
-	public Users getUserInfoByName(String name);
+	public Users getUserInfoByLoginName(String name);
 	
 	public Users getUserInfoById(long id);
 }

@@ -23,9 +23,8 @@ public class UserManagementImp implements UserManagement{
 	}
 
 	@Override
-	public void deleteUser() {
-		// TODO Auto-generated method stub
-		
+	public void deleteUser(long id) {
+		users.deleteUserById(id);
 	}
 
 	@Override
@@ -35,8 +34,8 @@ public class UserManagementImp implements UserManagement{
 	}
 
 	@Override
-	public Users getUserInfoByName(String name) {
-		return users.getUserInfoByName(name);
+	public Users getUserInfoByLoginName(String name) {
+		return users.getUserInfoByLoginName(name);
 	}
 	@Override
 	public Users getUserInfoById(long id) {
