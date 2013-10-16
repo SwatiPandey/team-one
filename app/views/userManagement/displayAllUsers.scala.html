@@ -1,0 +1,9 @@
+@(users:List[models.userManagementDAO.Users])
+
+
+@for(User<-users){
+	@User.getDescription().getRealFirstName()  @User.getDescription().getRealMiddleName() @User.getDescription().getRealLastName()
+	 @helper.form(routes.CreateUsersController.deleteUser(User.getId())) {
+                    <input type="submit" value="Delete">
+	}
+}
