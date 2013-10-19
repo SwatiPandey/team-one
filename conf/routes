@@ -5,6 +5,8 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+GET     /Index                           controllers.Application.index()
+
 GET     /TeamMembers                controllers.Application.members()
 
 GET     /About						controllers.Application.about()
