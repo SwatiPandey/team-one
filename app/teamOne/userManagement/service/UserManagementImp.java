@@ -1,46 +1,47 @@
-package userManagementService;
+package teamOne.userManagement.service;
 
 import java.util.List;
 
+import teamOne.DAO.DAOFactory;
+import teamOne.DAO.UserDAO;
 import models.userManagement.User;
 
 public class UserManagementImp implements UserManagement{
-	User users =null;
-	
+	UserDAO dao = null;
+
 	public UserManagementImp() {
-		 users = new User();
+		dao = DAOFactory.getUserDAO();
 	}
 	@Override
-	public void createUser() {
-		// TODO Auto-generated method stub
+	public void createUser(User user) {
 		
+		dao.createUser(user);
 	}
 
 	@Override
-	public void editUser() {
+	public void editUser(User user) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void deleteUser(long id) {
-		users.deleteUserById(id);
+		dao.deleteUser(id);
 	}
 
 	@Override
 	public List<User> listAllUsers() {
-		
-		return users.listAllUsers(); 
+		return dao.listAllUser();
 	}
 
 	@Override
 	public User getUserInfoByLoginName(String name) {
-		return users.getUserInfoByLoginName(name);
+		return dao.getUserInfoByLoginName(name);
 	}
+	
 	@Override
 	public User getUserInfoById(long id) {
-		// TODO Auto-generated method stub
-		return users.getUserInfoById(id);
+		return dao.getUserInfoById(id);
 	}
 
 }

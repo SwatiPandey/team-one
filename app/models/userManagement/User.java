@@ -1,15 +1,11 @@
 package models.userManagement;
 
-import java.util.List;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.TableGenerator;
-
-import com.avaje.ebean.ExpressionList;
 
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
@@ -89,31 +85,6 @@ public class User extends Model{
 	}
 	public void setPosition(String position) {
 		this.position = position;
-	}
+	} 
 	
-	public static Finder<Long,User> find = new
-			 Finder<Long,User>( Long.class, User.class ); 
-	
-	public List<User> listAllUsers(){
-		 return User.find.all();
-	 }
-	
-	public User getUserInfoById(long id){
-		 return User.find.byId(id);
-	 }
-	
-	public User getUserInfoByLoginName(String loginName){
-		 //TODO need to remove the hack around this
-		 List<User> users = User.find.all(); 
-		 for(User user:users){
-			 if(user.getLoginName().equals(loginName)){
-				 return user;
-			 }
-		 }
-		 
-		 return null;
-	 }
-	 public void deleteUserById(long id){
-		 User.find.ref(id).delete();
-	 }
 }

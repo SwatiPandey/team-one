@@ -1,4 +1,4 @@
-package userManagementService;
+package teamOne.userManagement.service;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import models.userManagement.User;
 
 public interface UserManagement {
 
-	public void createUser();
+	public void createUser(User user);
 	
-	public void editUser();
+	public void editUser(User user);
 	
 	public void deleteUser(long id);
 	
