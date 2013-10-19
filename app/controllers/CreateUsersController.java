@@ -1,6 +1,6 @@
 package controllers;
 
-import models.userManagementDAO.Users;
+import models.userManagement.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -10,18 +10,18 @@ import views.html.userManagement.displayAllUsers;
 
 public class CreateUsersController extends Controller{
 	private static TeamOneGUIAPI api = new TeamOneGUIAPI();
-	final static Form<Users> signUpForm = new Form<Users>(Users.class);
+	final static Form<User> signUpForm = new Form<User>(User.class);
 	
 	public static Result signUp(){
 		return ok(createUser.render(signUpForm));
 	}
 	
 	public static Result submit(){
-		Form<Users> filledForm = signUpForm.bindFromRequest();
+		Form<User> filledForm = signUpForm.bindFromRequest();
 		 if(filledForm.hasErrors()){
 			 return badRequest(createUser.render(filledForm));
 		 }
-		 Users created= filledForm.get();
+		 User created= filledForm.get();
 		 if("true".equals(filledForm.field("isAdmin").value())) {
 			 	created.setAdmin(1);
 		 }
@@ -42,7 +42,7 @@ public class CreateUsersController extends Controller{
 	}
 	
 	public static Result editUser(Long id){
-		Form<Users> filledForm = signUpForm.bindFromRequest();
+		Form<User> filledForm = signUpForm.bindFromRequest();
 		if(filledForm.hasErrors()){
 			 return badRequest(createUser.render(filledForm));
 		 }

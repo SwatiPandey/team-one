@@ -2,13 +2,13 @@ package userManagementService;
 
 import java.util.List;
 
-import models.userManagementDAO.Users;
+import models.userManagement.User;
 
 public class UserManagementImp implements UserManagement{
-	Users users =null;
+	User users =null;
 	
 	public UserManagementImp() {
-		 users = new Users();
+		 users = new User();
 	}
 	@Override
 	public void createUser() {
@@ -28,17 +28,17 @@ public class UserManagementImp implements UserManagement{
 	}
 
 	@Override
-	public List<Users> listAllUsers() {
+	public List<User> listAllUsers() {
 		
 		return users.listAllUsers(); 
 	}
 
 	@Override
-	public Users getUserInfoByLoginName(String name) {
+	public User getUserInfoByLoginName(String name) {
 		return users.getUserInfoByLoginName(name);
 	}
 	@Override
-	public Users getUserInfoById(long id) {
+	public User getUserInfoById(long id) {
 		// TODO Auto-generated method stub
 		return users.getUserInfoById(id);
 	}

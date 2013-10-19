@@ -1,4 +1,4 @@
-package models.userManagementDAO;
+package models.userManagement;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import play.db.ebean.Model;
 
 @Entity
 @TableGenerator(name="userTable",initialValue=0,allocationSize=1)
-public class Users extends Model{
+public class User extends Model{
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE,generator="userTable")
 	long id;
@@ -91,21 +91,21 @@ public class Users extends Model{
 		this.position = position;
 	}
 	
-	public static Finder<Long,Users> find = new
-			 Finder<Long,Users>( Long.class, Users.class ); 
+	public static Finder<Long,User> find = new
+			 Finder<Long,User>( Long.class, User.class ); 
 	
-	public List<Users> listAllUsers(){
-		 return Users.find.all();
+	public List<User> listAllUsers(){
+		 return User.find.all();
 	 }
 	
-	public Users getUserInfoById(long id){
-		 return Users.find.byId(id);
+	public User getUserInfoById(long id){
+		 return User.find.byId(id);
 	 }
 	
-	public Users getUserInfoByLoginName(String loginName){
+	public User getUserInfoByLoginName(String loginName){
 		 //TODO need to remove the hack around this
-		 List<Users> users = Users.find.all(); 
-		 for(Users user:users){
+		 List<User> users = User.find.all(); 
+		 for(User user:users){
 			 if(user.getLoginName().equals(loginName)){
 				 return user;
 			 }
@@ -114,6 +114,6 @@ public class Users extends Model{
 		 return null;
 	 }
 	 public void deleteUserById(long id){
-		 Users.find.ref(id).delete();
+		 User.find.ref(id).delete();
 	 }
 }

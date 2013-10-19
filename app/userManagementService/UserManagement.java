@@ -2,7 +2,7 @@ package userManagementService;
 
 import java.util.List;
 
-import models.userManagementDAO.Users;
+import models.userManagement.User;
 
 public interface UserManagement {
 
@@ -12,9 +12,9 @@ public interface UserManagement {
 	
 	public void deleteUser(long id);
 	
-	public List<Users> listAllUsers();
+	public List<User> listAllUsers();
 	
-	public Users getUserInfoByLoginName(String name);
+	public User getUserInfoByLoginName(String name);
 	
-	public Users getUserInfoById(long id);
+	public User getUserInfoById(long id);
 }

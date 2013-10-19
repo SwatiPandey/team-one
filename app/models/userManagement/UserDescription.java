@@ -1,4 +1,4 @@
-package models.userManagementDAO;
+package models.userManagement;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;

@@ -2,7 +2,7 @@ package teamOne.common;
 
 import java.util.List;
 
-import models.userManagementDAO.Users;
+import models.userManagement.User;
 import userManagementService.UserManagement;
 import userManagementService.UserManagementImp;
 
@@ -14,11 +14,11 @@ public class TeamOneGUIAPI {
 		usrmgmt = new UserManagementImp();
 	}
 	
-	public List<Users> displayAllUsers(){
+	public List<User> displayAllUsers(){
 		return usrmgmt.listAllUsers();
 	}
 	
-	public Users getUserInfoByLoginName(String name){
+	public User getUserInfoByLoginName(String name){
 		return usrmgmt.getUserInfoByLoginName(name);
 	}
 	
