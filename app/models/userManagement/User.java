@@ -41,6 +41,7 @@ public class User extends Model{
 		this.phoneNo = phoneNo;
 	}
 	@Required
+	@MinLength(6)
 	private String password;
 	
 	public String getPassword() {
