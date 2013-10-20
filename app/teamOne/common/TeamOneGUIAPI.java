@@ -15,7 +15,9 @@ public class TeamOneGUIAPI {
 			usrmgmt = new UserManagementImp();
 		}
 	}
-	
+	public void editUser(User user,long id){
+		usrmgmt.editUser(user,id);
+	}
 	public void createUser(User user){
 		usrmgmt.createUser(user);
 	}

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.TableGenerator;
 
+import play.data.validation.Constraints.Email;
+import play.data.validation.Constraints.MinLength;
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
@@ -17,6 +19,7 @@ public class User extends Model{
 	@GeneratedValue(strategy=GenerationType.TABLE,generator="userTable")
 	long id;
 	@Required
+	@MinLength(6)
 	private String loginName ;
 	
 	private int isAdmin;
@@ -25,8 +28,10 @@ public class User extends Model{
 	
 	private UserDescription description;
 	@Required
+	@Email
 	private String email;
 	
+	@MinLength(10)
 	private String phoneNo;
 	
 	public String getPhoneNo() {

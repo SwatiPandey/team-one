@@ -8,7 +8,7 @@ public interface UserManagement {
 
 	public void createUser(User user);
 	
-	public void editUser(User user);
+	public void editUser(User user,long id);
 	
 	public void deleteUser(long id);
 	

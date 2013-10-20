@@ -52,7 +52,9 @@ public class CreateUsersController extends Controller{
 		 }
 		//TODO need to remove this constant that has been attached to id
 		 id = 2l;
-		filledForm.get().update(id);
+		 User user = filledForm.get();
+		 api.editUser(user, id);
+//		filledForm.get().update(id);
 		return redirect(routes.CreateUsersController.displayAllUsers());
 	}
 

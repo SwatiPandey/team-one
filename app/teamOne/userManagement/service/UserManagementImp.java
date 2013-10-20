@@ -19,9 +19,8 @@ public class UserManagementImp implements UserManagement{
 	}
 
 	@Override
-	public void editUser(User user) {
-		// TODO Auto-generated method stub
-		
+	public void editUser(User user,long id) {
+		dao.editUser(user, id);
 	}
 
 	@Override
