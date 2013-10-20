@@ -1,5 +1,6 @@
 package models.userManagement;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class User extends Model{
 	long id;
 	@Required
 	@MinLength(6)
+	@Column(unique=true,updatable=false)
 	private String loginName ;
 	
 	private int isAdmin;
@@ -27,8 +29,10 @@ public class User extends Model{
 	private String position;
 	
 	private UserDescription description;
+	
 	@Required
 	@Email
+	@Column(unique=true)
 	private String email;
 	
 	@MinLength(10)
