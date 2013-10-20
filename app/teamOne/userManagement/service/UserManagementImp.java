@@ -14,7 +14,10 @@ public class UserManagementImp implements UserManagement{
 	}
 	@Override
 	public void createUser(User user) {
-		
+		if(!ValidateInput.CompareTwoFields(user.getPassword(),
+				user.getConfirmPassword())){
+			return;
+		}
 		dao.createUser(user);
 	}
 

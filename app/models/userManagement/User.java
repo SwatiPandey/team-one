@@ -44,10 +44,21 @@ public class User extends Model{
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
+	
 	@Required
 	@MinLength(6)
 	private String password;
 	
+	@Required
+	@MinLength(6)
+	private String confirmPassword;
+	
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
 	public String getPassword() {
 		return password;
 	}
